@@ -42,7 +42,7 @@ Pelota.prototype.draw = function(frecuencia, volume) {
    if (this.x>width) this.x=width;
    
    //Usado para depuración
-   //console.log("Freq: " + frecuencia + " Volume: " + volume + " Coordenadas resultantes: " + this.x + ", " + this.y);
+   console.log("Freq: " + frecuencia + " Volume: " + volume + " Coordenadas resultantes: " + this.x + ", " + this.y);
    
    //Pintar o borrar segun esté configurado.
    if (!pincelBorrador)
@@ -89,7 +89,7 @@ AudioReader.prototype.draw = function()
 	var espectro=this.fft.analyze();
 	
 	//Extraigo las intensidades de cada frecuencia del espectro en el fragmento actual de audio.
-	for (var f=0;f<44100/2;f++) {
+	for (var f=0;f<22048;f++) {
 		this.max[f]=this.fft.getEnergy(f);
 	}
 	
